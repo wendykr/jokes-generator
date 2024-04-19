@@ -4,7 +4,7 @@ import { Button } from "../Button/Button";
 import { Input } from '../Input/Input';
 import { Select } from '../Select/Select';
 import { typeJokes } from '../../constants/typeJokes';
-import { countJokes } from '../../constants/countJokes';
+// import { countJokes } from '../../constants/countJokes';
 
 interface FormProps {
   onSubmitForm: () => void;
