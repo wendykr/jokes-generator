@@ -1,0 +1,1 @@
+export const countJokes = [{number: 1}, {number: 2}, {number: 3}, {number: 4}, {number: 6}, {number: 6}, {number: 7}, {number: 8}, {number: 9}, {number: 10}];

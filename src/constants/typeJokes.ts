@@ -1,0 +1,1 @@
+export const typeJokes = [{name: 'general'}, {name: 'dad'}, {name: 'knock-knock'}, {name: 'programming'}];

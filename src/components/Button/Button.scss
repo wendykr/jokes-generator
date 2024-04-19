@@ -1,0 +1,19 @@
+.button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  color: #fff;
+  background-color: #3eb4cd;
+  font-family: Fira Sans, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #3598ac;
+    
+  }
+}
