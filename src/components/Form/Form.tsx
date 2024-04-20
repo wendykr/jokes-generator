@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 import './Form.scss';
 import { Button } from "../Button/Button";
 import { Input } from '../Input/Input';
 import { Select } from '../Select/Select';
 import { typeJokes } from '../../constants/typeJokes';
-// import { countJokes } from '../../constants/countJokes';
+import { countJokes } from '../../constants/countJokes';
 
 interface FormProps {
   onSubmitForm: () => void;
@@ -30,10 +30,10 @@ export const Form: React.FC<FormProps> = ({ onSubmitForm }) => {
     }));
   };
 
-  const handleChangeSelect = (value: string) => {
+  const handleChangeSelect = (event: ChangeEvent<HTMLSelectElement>) => {
     setFormData(prevState => ({
       ...prevState,
-      type: value,
+      [event.target.name]: event.target.value,
     }));
   };
 
@@ -45,8 +45,8 @@ export const Form: React.FC<FormProps> = ({ onSubmitForm }) => {
   return (
     <form className="form">
       <Input onChangeInput={handleChangeInput} />
-      <Select data={typeJokes} title="Select type of Jokes" onChangeSelect={handleChangeSelect} />
-      {/* <Select data={countJokes} title="Select count of Jokes" /> */}
+      <Select data={typeJokes} name="type" title="Select type of Jokes" onChangeSelect={handleChangeSelect} />
+      <Select data={countJokes} name="count" title="Select count of Jokes" onChangeSelect={handleChangeSelect} />
       <Button onClickButton={submitForm} />
     </form>
   )
