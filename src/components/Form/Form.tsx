@@ -7,7 +7,7 @@ import { typeJokes } from '../../constants/typeJokes';
 import { countJokes } from '../../constants/countJokes';
 
 interface FormProps {
-  onSubmitForm: () => void;
+  onSubmitForm: (data: FormDataStructure) => void;
 }
 
 export interface FormDataStructure {
@@ -38,8 +38,8 @@ export const Form: React.FC<FormProps> = ({ onSubmitForm }) => {
   };
 
   const submitForm = () => {
-    onSubmitForm();
-    console.log(formData);
+    onSubmitForm(formData);
+    // console.log(formData);
   }
 
   return (

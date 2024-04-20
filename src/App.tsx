@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.scss';
-import { Form } from './components/Form/Form';
+import { Form, FormDataStructure } from './components/Form/Form';
 import { Joke } from './components/Joke/Joke';
 import { HiMiniArrowUturnLeft } from "react-icons/hi2";
 
@@ -14,6 +14,10 @@ function App() {
 
   const [jokeData, setJokeData] = useState<JokeDataStructure[]>([]);
 
+  const handleSubmit = (data: FormDataStructure) => {
+    console.log(data.name);
+  }
+
   return (
     <div className="app">
       <div className="app__container">
@@ -22,7 +26,7 @@ function App() {
             <>
               <h2 className="title">Welcome to jokes generator</h2>
               <h3 className="subtitle">Please fill the form:</h3>
-              <Form onSubmitForm={() => {}} />
+              <Form onSubmitForm={handleSubmit} />
             </>
           ) : (
             <>
