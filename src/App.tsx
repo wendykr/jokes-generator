@@ -1,22 +1,24 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.scss';
 import { Form } from './components/Form/Form';
 import { Joke } from './components/Joke/Joke';
 import { HiMiniArrowUturnLeft } from "react-icons/hi2";
 
+interface JokeDataStructure {
+  type: string;
+  setup: string;
+  punchline: string;
+}
+
 function App() {
 
-  const [show, setShow] = useState<boolean>();
-
-  useEffect(() => {
-    setShow(true);
-  }, [])
+  const [jokeData, setJokeData] = useState<JokeDataStructure[]>([]);
 
   return (
     <div className="app">
       <div className="app__container">
         {
-          show ? (
+          jokeData.length === 0 ? (
             <>
               <h2 className="title">Welcome to jokes generator</h2>
               <h3 className="subtitle">Please fill the form:</h3>
