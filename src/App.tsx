@@ -44,7 +44,9 @@ function App() {
             <>
               <h2 className="title">{name}</h2>
               <h3 className="subtitle">There are jokes for you!</h3>
-              <Joke setup="What did the judge say to the dentist?" punchline="Do you swear to pull the tooth, the whole tooth and nothing but the tooth?" />
+              {
+                jokeData.map(joke => <Joke setup={joke.setup} punchline={joke.punchline} />)
+              }
               <span className="app__container__back-icon"><HiMiniArrowUturnLeft className="icon-arrowBack" /></span>
             </>
           )
