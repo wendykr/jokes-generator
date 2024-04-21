@@ -3,6 +3,7 @@ import './App.scss';
 import { Form, FormDataStructure } from './components/Form/Form';
 import { Joke } from './components/Joke/Joke';
 import { HiMiniArrowUturnLeft } from "react-icons/hi2";
+import sourceOfJokes from "./constants/jokes-data";
 
 interface JokeDataStructure {
   type: string;
@@ -15,10 +16,19 @@ function App() {
   const [jokeData, setJokeData] = useState<JokeDataStructure[]>([]);
   const [name, setName] = useState<string>('');
 
-  const handleSubmit = (data: FormDataStructure) => {
-    console.log(data);
-    setName(data.name);
+  const generateJokes = (type: string) => {
+    const filterJokes = sourceOfJokes.filter((joke: { type: string; }) => joke.type === type);
+    setJokeData(filterJokes);
   }
+
+  const handleSubmit = (data: FormDataStructure) => {
+    // console.log(data);
+    setName(data.name);
+    // console.log(data.count);
+    generateJokes(data.type);
+  }
+
+  console.log(jokeData);
 
   return (
     <div className="app">
