@@ -46,7 +46,7 @@ export const Form: React.FC<FormProps> = ({ onSubmitForm }) => {
       <Input onChangeInput={handleChangeInput} />
       <Select data={typeJokes} name="type" title="Select type of Jokes" onChangeSelect={handleChangeSelect} />
       <Select data={countJokes} name="count" title="Select count of Jokes" onChangeSelect={handleChangeSelect} />
-      <Button onClickButton={submitForm} />
+      <Button onClickButton={submitForm} name={formData.name} type={formData.type} count={formData.count} />
     </form>
   )
 }
