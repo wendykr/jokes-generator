@@ -1,0 +1,27 @@
+.joke {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  width: 400px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 49px -35px #000000bf;
+
+  &__body {
+    font-size: 14px;
+
+    &--punchline {
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      gap: 2px;
+    }
+  }
+}
+
+.icon-arrow {
+  font-size: 20px;
+}
