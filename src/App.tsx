@@ -16,16 +16,14 @@ function App() {
   const [jokeData, setJokeData] = useState<JokeDataStructure[]>([]);
   const [name, setName] = useState<string>('');
 
-  const generateJokes = (type: string) => {
-    const filterJokes = sourceOfJokes.filter((joke: { type: string; }) => joke.type === type);
+  const generateJokes = (type: string, count: number) => {
+    const filterJokes = sourceOfJokes.filter((joke: { type: string; }) => joke.type === type).slice(0, count);
     setJokeData(filterJokes);
   }
 
   const handleSubmit = (data: FormDataStructure) => {
-    // console.log(data);
     setName(data.name);
-    // console.log(data.count);
-    generateJokes(data.type);
+    generateJokes(data.type, data.count);
   }
 
   console.log(jokeData);
