@@ -45,7 +45,7 @@ function App() {
               {
                 jokeData.map(joke => <Joke setup={joke.setup} punchline={joke.punchline} />)
               }
-              <span className="app__container__back-icon"><HiMiniArrowUturnLeft className="icon-arrowBack" /></span>
+              <span className="app__container__back-icon"><HiMiniArrowUturnLeft className="icon-arrowBack" onClick={() => setJokeData([])}/></span>
             </>
           )
         }
