@@ -4,6 +4,8 @@ import { Form, FormDataStructure } from './components/Form/Form';
 import { Joke } from './components/Joke/Joke';
 import { HiMiniArrowUturnLeft } from "react-icons/hi2";
 import sourceOfJokes from "./constants/jokes-data";
+import { toast, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface JokeDataStructure {
   type: string;
@@ -18,7 +20,22 @@ function App() {
 
   const generateJokes = (type: string, count: number) => {
     const filterJokes = sourceOfJokes.filter((joke: { type: string; }) => joke.type === type).slice(0, count);
-    setJokeData(filterJokes);
+    if (filterJokes.length < count) {
+      console.log(filterJokes.length);
+      toast.error(`Max. count of Jokes is ${filterJokes.length}!`, {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Slide,
+      });
+    } else {
+      setJokeData(filterJokes);
+    }
   }
 
   const handleSubmit = (data: FormDataStructure) => {
