@@ -39,7 +39,6 @@ export const Form: React.FC<FormProps> = ({ onSubmitForm }) => {
 
   const submitForm = () => {
     onSubmitForm(formData);
-    // console.log(formData);
   }
 
   return (

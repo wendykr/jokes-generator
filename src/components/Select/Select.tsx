@@ -30,7 +30,7 @@ export const Select: React.FC<SelectProps> = ({ data, name, title, onChangeSelec
   return (
     <label className="select">
       <p className="select__title">{title}</p>
-        <select className="select__field" name={name} value={selectValue} onChange={handleChange}>
+        <select className="select__field" name={name} value={selectValue} onChange={handleChange} required>
           <option value="">Select one</option>
           {
             data.map((data, index) => {
