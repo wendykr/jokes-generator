@@ -17,3 +17,12 @@
     
   }
 }
+
+.button:disabled {
+  background-color: #bbb;
+  cursor: initial;
+
+  &:hover {
+    background-color: #bbb;
+  }
+}
