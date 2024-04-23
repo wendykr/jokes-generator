@@ -21,7 +21,6 @@ function App() {
   const generateJokes = (type: string, count: number) => {
     const filterJokes = sourceOfJokes.filter((joke: { type: string; }) => joke.type === type).slice(0, count);
     if (filterJokes.length < count) {
-      console.log(filterJokes.length);
       toast.error(`Max. count of Jokes is ${filterJokes.length}!`, {
         position: "top-center",
         autoClose: 3000,
@@ -42,8 +41,6 @@ function App() {
     setName(data.name);
     generateJokes(data.type, data.count);
   }
-
-  console.log(jokeData);
 
   return (
     <div className="app">
