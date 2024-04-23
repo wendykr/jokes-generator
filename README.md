@@ -1,30 +1,18 @@
-# React + TypeScript + Vite
+# TypeScript v Reactu
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Jokes Generator
+1. Stáhni si [vzorový projekt](https://github.com/WhiteLady1/react-demo-app) v Reactu. Nainstaluj závislosti a projekt si spusť. Podívej se jak vypadá v prohlížeči a jaký je jeho kód.
+2. Pomocí vite a jeho šablony react-ts si vytvoř vlastní projekt. Tvým úkolem je naprogramovat stejnou aplikaci ovšem s použitím Typescriptu.
+3. Můžeš kopírovat libovolný kód z původní aplikace, ulehčí ti to práci. Stejně tak si můžeš zkopírovat použité styly, ale neboj se zapojit i vlastní fantazii.
+4. Pokud by tě napadlo jakékoli vylepšení, s chutí do něj a nezapomeň se pochlubit se svým výtvorem ostatním.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Rozsah a relizace
+Pro vypracování úkolu jsem využila dostupné styly ze vzorového projektu. Dále jsem pokračovala dle vlastní fantazie:
+- rozdělení komponenty `Form` na dílčí komponenty - `Input`, `Select`, `Button`
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+**Moje vylepšení**
+- formulář nelze odeslat, pokud:
+    - nejsou všechna pole fomuláře vyplněna, `button` má atribut `disabled`
+    - `count` je větší než počet filtrovaných jokes podle `type`
